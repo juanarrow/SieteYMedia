@@ -23,5 +23,4 @@ public class Mano {
     public boolean esSieteYMedia(){
         return puntuacion()==7.5;
     }
-    
 }
