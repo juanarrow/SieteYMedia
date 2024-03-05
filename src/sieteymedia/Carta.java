@@ -1,37 +1,31 @@
 package sieteymedia;
 
-/**
- * 
- * @param palo
- */
-public class Carta {
+public class Carta implements CartaInterface{
 
-    private String numero;
-    private String palo;
-    private double valor;
-
+    private int codigo;
    
-    public Carta(String palo, String numero, double puntuacion){
-        this.valor = puntuacion;
-        this.palo = palo;
-        this.numero = numero;
+    public Carta(int codigo){
+        this.codigo = codigo; 
     }
 
+    @Override
     public String getPalo() {
-        return palo;
+        return BarajaInterface.getPalo(codigo);
     }
 
+    @Override
     public String getNumero() {
-        return numero;
+        return BarajaInterface.getNumero(codigo);
     }
 
-    public double getValor() {
-        return valor;
+    @Override
+    public int getCodigo(){
+        return codigo;
     }
 
     @Override
     public String toString() {
-        return String.format("%s de %s", this.numero, this.palo);
+        return String.format("%s de %s", getNumero(), getPalo());
     }
 
     
